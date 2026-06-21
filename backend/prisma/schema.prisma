@@ -15,6 +15,7 @@ model User {
   role        Role
   createdAt   DateTime     @default(now())
   assignments Assignment[]
+  submissions Submission[]
 }
 
 model Assignment {
@@ -27,6 +28,7 @@ model Assignment {
 
   teacher User     @relation(fields: [teacherId], references: [id], onDelete: Cascade)
   rubrics Rubric[]
+  submissions Submission[]
 
   @@index([teacherId])
 }
@@ -41,6 +43,21 @@ model Rubric {
   assignment Assignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
 
   @@index([assignmentId])
+}
+
+model Submission {
+  id           String   @id @default(uuid())
+  assignmentId String
+  studentId    String
+  answer       String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  assignment Assignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  student    User       @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@index([assignmentId])
+  @@index([studentId])
 }
 
 enum Role {

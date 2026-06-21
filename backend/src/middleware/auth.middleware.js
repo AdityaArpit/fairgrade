@@ -29,3 +29,11 @@ export function requireTeacher(req, res, next) {
 
   return next();
 }
+
+export function requireStudent(req, res, next) {
+  if (String(req.user?.role || '').toLowerCase() !== 'student') {
+    return res.status(403).json({ message: 'Student access is required' });
+  }
+
+  return next();
+}
