@@ -21,3 +21,11 @@ export function authenticateJwt(req, res, next) {
     return res.status(401).json({ message: 'Invalid or expired token' });
   }
 }
+
+export function requireTeacher(req, res, next) {
+  if (String(req.user?.role || '').toLowerCase() !== 'teacher') {
+    return res.status(403).json({ message: 'Teacher access is required' });
+  }
+
+  return next();
+}
