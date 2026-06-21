@@ -1,0 +1,19 @@
+{
+  "name": "ai-assisted-answer-evaluation-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Initial monorepo setup for the AI-Assisted Answer Evaluation System.",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev:frontend": "npm run dev --workspace frontend",
+    "dev:backend": "npm run dev --workspace backend",
+    "build:frontend": "npm run build --workspace frontend",
+    "start:backend": "npm run start --workspace backend",
+    "prisma:generate": "npm run prisma:generate --workspace backend",
+    "prisma:migrate": "npm run prisma:migrate --workspace backend",
+    "install:all": "npm install"
+  }
+}
