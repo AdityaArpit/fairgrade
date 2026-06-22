@@ -55,9 +55,20 @@ model Submission {
 
   assignment Assignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
   student    User       @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  evaluation Evaluation?
 
   @@index([assignmentId])
   @@index([studentId])
+}
+
+model Evaluation {
+  id           String   @id @default(uuid())
+  submissionId String   @unique
+  score        Float
+  feedback     String
+  createdAt    DateTime @default(now())
+
+  submission Submission @relation(fields: [submissionId], references: [id], onDelete: Cascade)
 }
 
 enum Role {
