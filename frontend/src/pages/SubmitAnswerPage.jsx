@@ -6,6 +6,7 @@ import Card from '../components/Card.jsx';
 import PageHeader from '../components/PageHeader.jsx';
 import { getApiErrorMessage } from '../services/api.js';
 import { createSubmission } from '../services/submissionService.js';
+import { createEvaluation } from '../services/evaluationService.js';
 
 export default function SubmitAnswerPage() {
   const { assignmentId } = useParams();
@@ -22,6 +23,9 @@ export default function SubmitAnswerPage() {
 
     try {
       const submission = await createSubmission({ assignmentId, answer });
+
+      await createEvaluation(submission.id);
+
       navigate(`/evaluations/${submission.id}`);
     } catch (apiError) {
       setError(getApiErrorMessage(apiError, 'Unable to submit answer'));

@@ -1,3 +1,4 @@
+import AssignmentSubmissionsPage from './pages/AssignmentSubmissionsPage.jsx';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import DashboardLayout from './layouts/DashboardLayout.jsx';
@@ -21,6 +22,10 @@ function App() {
         <Route element={<DashboardLayout />}>
           <Route path="/teacher" element={<TeacherDashboardPage />} />
           <Route path="/teacher/assignments/new" element={<CreateAssignmentPage />} />
+          <Route
+            path="/teacher/assignments/:id/submissions"
+            element={<AssignmentSubmissionsPage />}
+          />
         </Route>
       </Route>
 

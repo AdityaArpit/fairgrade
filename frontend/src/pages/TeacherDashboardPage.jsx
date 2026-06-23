@@ -58,7 +58,12 @@ export default function TeacherDashboardPage() {
       ) : assignments.length ? (
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {assignments.map((assignment) => (
-            <AssignmentCard key={assignment.id} assignment={assignment} />
+            <AssignmentCard
+            key={assignment.id}
+            assignment={assignment}
+            actionLabel="View submissions"
+            to={`/teacher/assignments/${assignment.id}/submissions`}
+          />
           ))}
         </div>
       ) : (

@@ -27,7 +27,7 @@ export default function DashboardLayout() {
             <Sparkles size={20} />
           </div>
           <div>
-            <p className="font-bold tracking-tight text-slate-950">EvalAI</p>
+            <p className="font-bold tracking-tight text-slate-950">FairGrade</p>
             <p className="text-xs text-slate-500">Answer evaluation</p>
           </div>
         </Link>

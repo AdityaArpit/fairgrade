@@ -29,7 +29,7 @@ export default function LandingPage() {
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-950 text-white">
             <Sparkles size={20} />
           </div>
-          <span className="text-lg font-bold tracking-tight text-slate-950">EvalAI</span>
+          <span className="text-lg font-bold tracking-tight text-slate-950">FairGrade</span>
         </Link>
         <div className="flex items-center gap-3">
           <Link to="/login">
@@ -47,14 +47,13 @@ export default function LandingPage() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white/70 px-3 py-1 text-sm font-medium text-blue-700 shadow-sm">
               <CheckCircle2 size={16} />
-              AI-assisted answer evaluation
+              Fair & Consistent Academic Evaluation
             </div>
             <h1 className="mt-6 max-w-4xl text-5xl font-bold tracking-tight text-slate-950 sm:text-6xl">
-              Evaluate student answers with speed, structure, and confidence.
+              Ensure fair and consistent grading with AI-powered evaluation.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-              A professional workspace for teachers to create assignments and for
-              students to submit answers, with AI-generated feedback grounded in rubrics.
+              FairGrade helps educators evaluate student answers consistently using rubric-based AI scoring, detailed feedback, and streamlined teacher-student workflows.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link to="/register">
@@ -74,7 +73,7 @@ export default function LandingPage() {
           <Card className="p-4">
             <div className="rounded-lg bg-slate-950 p-5 text-white">
               <div className="flex items-center justify-between">
-                <p className="text-sm font-medium text-slate-300">Evaluation report</p>
+                <p className="text-sm font-medium text-slate-300">FairGrade report</p>
                 <span className="rounded-full bg-emerald-400/15 px-2.5 py-1 text-xs font-semibold text-emerald-200">
                   Complete
                 </span>
