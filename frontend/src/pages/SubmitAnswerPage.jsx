@@ -22,11 +22,12 @@ export default function SubmitAnswerPage() {
     setIsSubmitting(true);
 
     try {
-      const submission = await createSubmission({ assignmentId, answer });
+      await createSubmission({
+      assignmentId,
+      answer
+    });
 
-      await createEvaluation(submission.id);
-
-      navigate(`/evaluations/${submission.id}`);
+    navigate('/student');
     } catch (apiError) {
       setError(getApiErrorMessage(apiError, 'Unable to submit answer'));
     } finally {
